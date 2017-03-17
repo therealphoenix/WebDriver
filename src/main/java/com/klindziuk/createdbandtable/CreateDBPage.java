@@ -15,7 +15,6 @@ public class CreateDBPage {
 		    driver.findElement(By.linkText("New")).click();
 		    driver.findElement(By.id("text_create_db")).clear();
 		    driver.findElement(By.id("text_create_db")).sendKeys("auth");
-		    //driver.findElement(By.name("db_collation")).click();
 		    driver.findElement(By.xpath("//select[@name = 'db_collation']//*[text() = 'utf8_general_ci']")).click();
 	}
 	

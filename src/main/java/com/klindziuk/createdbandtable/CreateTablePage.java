@@ -69,6 +69,10 @@ public class CreateTablePage {
 	protected void setAutoIncrement() {
 		driver.findElement(By.xpath("//input[@name='field_extra[0]']")).click();
 	}
+	
+	protected void selectTableCollation(){
+		 driver.findElement(By.xpath("//select[@name = 'tbl_collation']//*[text() = 'utf8_general_ci']")).click();
+ }
 
 	protected void submitCreatingTable(){
 		driver.findElement(By.xpath("//input[@name='do_save_data']")).click();

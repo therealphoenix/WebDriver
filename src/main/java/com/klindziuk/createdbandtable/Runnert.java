@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 public class Runnert {
 
 	public static void main(String[] args) {
+		
 		String base_url = "http://localhost/phpmyadmin/";
 		File pathBinary = new File("C:\\program files\\Mozilla Firefox\\firefox.exe");
 		FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
@@ -34,7 +35,6 @@ public class Runnert {
 		tablePage.setPrimaryKey();
 		tablePage.setAutoIncrement();
 		tablePage.submitCreatingTable();
-
 	}
 
 }

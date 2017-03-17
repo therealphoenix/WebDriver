@@ -32,15 +32,13 @@ protected void pushButton(){
 	 
  }
  
- protected void loginAs(String userName, String password) {
+ public void loginAs(String userName, String password) {
      setUserName(userName);
      setPassword(password);
      pushButton();
 }
  
- protected void selectTableCollation(){
-		 driver.findElement(By.xpath("//select[@name = 'tbl_collation']//*[text() = 'utf8_general_ci']")).click();
-  }
+ 
  
 
 }
