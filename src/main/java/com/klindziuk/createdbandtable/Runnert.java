@@ -31,9 +31,11 @@ public class Runnert {
 		tablePage.addColumns("2");
 		tablePage.waitForAddColumns();
 		tablePage.addNamesOfColumn();
+		tablePage.selectTypes();
 		tablePage.setLengthOfValues();
 		tablePage.setPrimaryKey();
 		tablePage.setAutoIncrement();
+		tablePage.selectTableCollation();
 		tablePage.submitCreatingTable();
 	}
 

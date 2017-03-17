@@ -62,6 +62,7 @@ public class CreateTablePage {
 
 	protected void setPrimaryKey() {
 		driver.findElement(By.xpath("//select[@id = 'field_0_7']//*[text() = 'PRIMARY']")).click();
+		
 		// close pop up window
 		driver.findElement(By.cssSelector("button.ui-button:nth-child(1)")).click();
 	}
