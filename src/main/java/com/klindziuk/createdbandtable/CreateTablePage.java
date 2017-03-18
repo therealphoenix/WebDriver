@@ -27,7 +27,7 @@ public class CreateTablePage {
 
 	protected void waitForAddColumns() {
 		try {
-			Thread.sleep(800);
+			Thread.sleep(1400);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

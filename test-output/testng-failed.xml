@@ -5,9 +5,10 @@
     <classes>
       <class name="com.klindziuk.testtable.TableTest">
         <methods>
-          <include name="afterClass"/>
-          <include name="testTable"/>
-          <include name="beforeClass"/>
+          <include name="testTableCreation"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="testData_User2"/>
         </methods>
       </class> <!-- com.klindziuk.testtable.TableTest -->
     </classes>

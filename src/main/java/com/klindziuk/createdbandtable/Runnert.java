@@ -12,7 +12,7 @@ public class Runnert {
 	public static void main(String[] args) {
 		
 		String base_url = "http://localhost/phpmyadmin/";
-		File pathBinary = new File("C:\\program files\\Mozilla Firefox\\firefox.exe");
+		File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 		FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
 		StringBuffer verificationErrors = new StringBuffer();
 		File path_to_profile = new File("d:/FireFox/");
@@ -37,6 +37,13 @@ public class Runnert {
 		tablePage.setAutoIncrement();
 		tablePage.selectTableCollation();
 		tablePage.submitCreatingTable();
+		tablePage.waitForAddColumns();
+		DataInsertion dataInsertion = new DataInsertion(driver);
+		
+		dataInsertion.openInsertMenu();
+		dataInsertion.fillData();
+		dataInsertion.pushButton();
+		dataInsertion.moveToBrowse();
 	}
 
 }
