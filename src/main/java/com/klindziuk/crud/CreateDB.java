@@ -39,11 +39,11 @@ public class CreateDB {
 		columns.selectTableCollation();
 		columns.submitCreatingTable();
 		columns.waitForAddColumns();
-		DataInsertion dataInsertion = new DataInsertion(driver);
-		dataInsertion.openInsertMenu();
-		dataInsertion.fillData();
-		dataInsertion.pushButton();
-		dataInsertion.moveToBrowse();
-		dataInsertion.logOut();
+		InsertData insertData = new InsertData(driver);
+		insertData.openInsertMenu();
+		insertData.fillData();
+		insertData.pushButton();
+		insertData.moveToBrowse();
+		insertData.logOut();
 	}
 }

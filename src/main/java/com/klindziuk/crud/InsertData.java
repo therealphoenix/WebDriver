@@ -3,7 +3,7 @@ package com.klindziuk.crud;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DataInsertion {
+public class InsertData {
 	private WebDriver driver;
 	private By insertMenuLocator = By.cssSelector("img.ic_b_insrow:nth-child(1)");
 	private By browseMenuLocator = By.cssSelector(".ic_b_browse");
@@ -22,7 +22,7 @@ public class DataInsertion {
 	private By user2NameFormLocator = By.cssSelector("#field_11_3");
 	private By user2RememberFormLocator = By.cssSelector("#field_12_3");
 
-	public DataInsertion(WebDriver driver) {
+	public InsertData(WebDriver driver) {
 		this.driver = driver;
 	}
 
