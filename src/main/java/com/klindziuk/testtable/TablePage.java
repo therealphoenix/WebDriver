@@ -48,8 +48,9 @@ public By autoIncrementSelector = By.cssSelector("#tablerowstats > tbody:nth-chi
 		this.driver = driver;
 		this.driver = driver;
 		// Checking for right page is opened 
-	//	if ((!driver.getTitle().equals("localhost / localhost | phpMyAdmin 4.5.1"))) {
-	//		throw new IllegalStateException("Invalid page opened");
+		if ((!driver.getTitle().equals("localhost / localhost | phpMyAdmin 4.5.1"))) {
+			throw new IllegalStateException("Invalid page opened");
+		}
 		}
 	
 	
@@ -78,7 +79,7 @@ public By autoIncrementSelector = By.cssSelector("#tablerowstats > tbody:nth-chi
 		return element.getText().equals(type);
 	}
 	
-	public void logOut(){
+	public void logOut() {
 		driver.findElement(By.cssSelector(".ic_s_loggoff")).click();
 		driver.close();
 	}

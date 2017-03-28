@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import com.klindziuk.testtable.LoginPage;
 
 
 public class DropDB {
@@ -17,8 +18,7 @@ public class DropDB {
 	File pathToProfile = new File("d:/FireFox/");
 	FirefoxProfile profile = new FirefoxProfile(pathToProfile);
 	WebDriver driver = null;
-	
-	
+		
 	public void removeDB(){
 		driver = new FirefoxDriver(firefoxBinary, profile);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -41,4 +41,3 @@ public class DropDB {
 	
 	
 	}
-

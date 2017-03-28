@@ -14,20 +14,19 @@ public class AddDB {
 	public AddDB(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void createDB() {
-		
-		    driver.findElement(newDBLocator).click();
-		    driver.findElement(dbNameLocator).clear();
-		    driver.findElement(dbNameLocator).sendKeys("auth");
-		//    driver.findElement(By.xpath("//select[@name = 'db_collation']//*[text() = 'utf8_general_ci']")).click();
-		    driver.findElement(buttonGoLocator).click();
+		driver.findElement(newDBLocator).click();
+		driver.findElement(dbNameLocator).clear();
+		driver.findElement(dbNameLocator).sendKeys("auth");
+		// sometimes it doensn't work
+		// driver.findElement(By.xpath("//select[@name =
+		// 'db_collation']//*[text() = 'utf8_general_ci']")).click();
+		driver.findElement(buttonGoLocator).click();
 	}
-	
+
 	public boolean checkDataBase(By selector, String type) {
 		WebElement element = driver.findElement(selector);
 		return element.getText().equals(type);
 	}
-	
-	}
-
+}

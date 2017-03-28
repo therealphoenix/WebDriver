@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dataTable"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1,620">
+  <properties />
+  
+  
+            <testcase name="testData_User1" time="1,339" classname="com.klindziuk.testtable.DataTableTest" />
+                <testcase name="testData_User2" time="0,281" classname="com.klindziuk.testtable.DataTableTest" />
+      
+</testsuite>
