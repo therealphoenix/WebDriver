@@ -1,7 +1,4 @@
-package com.klindziuk.createdbandtable;
-
-import java.util.concurrent.TimeUnit;
-
+package com.klindziuk.crud;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,11 +10,11 @@ public class DataInsertion {
 		this.driver = driver;
 	}
 	
-	protected void openInsertMenu(){
+	public void openInsertMenu(){
 		driver.findElement(By.cssSelector("#topmenu > li:nth-child(5) > a:nth-child(1)")).click();
 		}
 	
-	protected void fillData(){
+	public void fillData(){
 	
 		driver.findElement(By.cssSelector("#field_1_3")).sendKeys("1");
 		driver.findElement(By.cssSelector("#field_2_3")).sendKeys("user1");
@@ -32,11 +29,11 @@ public class DataInsertion {
 		driver.findElement(By.cssSelector("#field_11_3")).sendKeys("Smith");
 	}
 	
-	protected void pushButton(){
+	public void pushButton(){
 		driver.findElement(By.cssSelector("#buttonYes")).click();
 	}
 
-	protected void moveToBrowse() {
+	public void moveToBrowse() {
 		driver.findElement(By.cssSelector("#topmenu > li:nth-child(1) > a:nth-child(1)")).click();;
 	}
 }

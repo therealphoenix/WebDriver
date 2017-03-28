@@ -5,9 +5,9 @@
     <classes>
       <class name="com.klindziuk.testtable.DataTableTest">
         <methods>
-          <include name="testData_User2"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
+          <include name="testData_User1"/>
         </methods>
       </class> <!-- com.klindziuk.testtable.DataTableTest -->
     </classes>

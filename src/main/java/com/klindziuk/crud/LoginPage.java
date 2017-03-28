@@ -1,4 +1,4 @@
-package com.klindziuk.createdbandtable;
+package com.klindziuk.crud;
 
 
 

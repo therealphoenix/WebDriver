@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30120" started-at="2017-03-27T06:39:25Z" finished-at="2017-03-27T06:39:56Z">
+  <suite name="TestSuit" duration-ms="45315" started-at="2017-03-28T12:40:47Z" finished-at="2017-03-28T12:41:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30120" started-at="2017-03-27T06:39:25Z" finished-at="2017-03-27T06:39:56Z">
+    <test name="tableTest" duration-ms="23788" started-at="2017-03-28T12:40:47Z" finished-at="2017-03-28T12:41:11Z">
       <class name="com.klindziuk.testtable.TableTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.klindziuk.testtable.TableTest@daef40]" name="beforeTest" is-config="true" duration-ms="27680" started-at="2017-03-27T09:39:25Z" finished-at="2017-03-27T09:39:53Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.klindziuk.testtable.TableTest@1c27452]" name="beforeTest" is-config="true" duration-ms="20967" started-at="2017-03-28T15:40:47Z" finished-at="2017-03-28T15:41:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testTable()[pri:0, instance:com.klindziuk.testtable.TableTest@daef40]" name="testTable" duration-ms="2391" started-at="2017-03-27T09:39:53Z" finished-at="2017-03-27T09:39:56Z">
+        <test-method status="PASS" signature="testTable()[pri:0, instance:com.klindziuk.testtable.TableTest@1c27452]" name="testTable" duration-ms="1603" started-at="2017-03-28T15:41:08Z" finished-at="2017-03-28T15:41:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTable -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.klindziuk.testtable.TableTest@daef40]" name="afterTest" is-config="true" duration-ms="16" started-at="2017-03-27T09:39:56Z" finished-at="2017-03-27T09:39:56Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.klindziuk.testtable.TableTest@1c27452]" name="afterTest" is-config="true" duration-ms="1188" started-at="2017-03-28T15:41:10Z" finished-at="2017-03-28T15:41:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- com.klindziuk.testtable.TableTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- tableTest -->
+    <test name="dataTable" duration-ms="21482" started-at="2017-03-28T12:41:11Z" finished-at="2017-03-28T12:41:32Z">
+      <class name="com.klindziuk.testtable.DataTableTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.klindziuk.testtable.DataTableTest@87761d]" name="beforeTest" is-config="true" duration-ms="18881" started-at="2017-03-28T15:41:11Z" finished-at="2017-03-28T15:41:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="testData_User1()[pri:0, instance:com.klindziuk.testtable.DataTableTest@87761d]" name="testData_User1" duration-ms="1222" started-at="2017-03-28T15:41:30Z" finished-at="2017-03-28T15:41:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData_User1 -->
+        <test-method status="PASS" signature="testData_User2()[pri:0, instance:com.klindziuk.testtable.DataTableTest@87761d]" name="testData_User2" duration-ms="231" started-at="2017-03-28T15:41:31Z" finished-at="2017-03-28T15:41:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData_User2 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.klindziuk.testtable.DataTableTest@87761d]" name="afterTest" is-config="true" duration-ms="1144" started-at="2017-03-28T15:41:31Z" finished-at="2017-03-28T15:41:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.klindziuk.testtable.DataTableTest -->
+      <class name="com.klindziuk.testtable.TableTest">
+        <test-method status="PASS" signature="suitSetup()[pri:0, instance:com.klindziuk.testtable.TableTest@1c27452]" name="suitSetup" is-config="true" duration-ms="38762" started-at="2017-03-28T15:40:08Z" finished-at="2017-03-28T15:40:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suitSetup -->
+        <test-method status="PASS" signature="suitSetDown()[pri:0, instance:com.klindziuk.testtable.TableTest@1c27452]" name="suitSetDown" is-config="true" duration-ms="20198" started-at="2017-03-28T15:41:32Z" finished-at="2017-03-28T15:41:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suitSetDown -->
+      </class> <!-- com.klindziuk.testtable.TableTest -->
+    </test> <!-- dataTable -->
+  </suite> <!-- TestSuit -->
 </testng-results>

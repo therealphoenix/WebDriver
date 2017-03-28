@@ -1,4 +1,4 @@
-package com.klindziuk.createdbandtable;
+package com.klindziuk.crud;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;

@@ -8,8 +8,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+
+import com.klindziuk.crud.DropDB;
+import com.klindziuk.crud.CreateDB;
 
 public class TableTest {
 	String baseURL = "http://localhost/phpmyadmin/";
@@ -18,9 +23,22 @@ public class TableTest {
 	StringBuffer verificationErrors = new StringBuffer();
 	File pathToProfile = new File("d:/FireFox/");
 	FirefoxProfile profile = new FirefoxProfile(pathToProfile);
-	WebDriver driver = null;
+	WebDriver driver;
 	LoginPage loginPage;
 	TablePage tablePage;
+	
+	@BeforeSuite
+	public void suitSetup() {
+		CreateDB run = new CreateDB();
+		run.create();
+	}
+	@AfterSuite
+	public void suitSetDown() {
+		DropDB drop = new DropDB();
+		drop.removeDB();
+		drop.logOut();
+		
+	}
 
 	@BeforeClass
 	public void beforeTest() throws Exception {
@@ -39,8 +57,9 @@ public class TableTest {
 
 	@AfterClass
 	public void afterTest() {
+		tablePage.logOut();
 		driver.close();
-		driver = null;
+		
 		String verificationErrorString = verificationErrors.toString();
 		if (!"".equals(verificationErrorString)) {
 			Assert.fail(verificationErrorString);
@@ -79,6 +98,6 @@ public class TableTest {
 		Assert.assertTrue(tablePage.checkElement(tablePage.collationSelector, "utf8_general_ci"));
 		// check AutoIncrement+
 		Assert.assertTrue(tablePage.checkElement(tablePage.autoIncrementSelector, "3"));
-		driver.close();
+		
 	}
 }

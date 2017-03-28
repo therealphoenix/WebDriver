@@ -1,4 +1,4 @@
-package com.klindziuk.createdbandtable;
+package com.klindziuk.crud;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -7,26 +7,25 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
-public class Runnert {
-
-	public static void main(String[] args) {
-		
-		String base_url = "http://localhost/phpmyadmin/";
-		File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-		FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-		StringBuffer verificationErrors = new StringBuffer();
-		File path_to_profile = new File("d:/FireFox/");
-		FirefoxProfile profile = new FirefoxProfile(path_to_profile);
-		WebDriver driver = new FirefoxDriver(firefoxBinary, profile);
-
+public class CreateDB {
+	String baseURL = "http://localhost/phpmyadmin/";
+	File pathBinary = new File("C:\\program files\\Mozilla Firefox\\firefox.exe");
+	FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
+	StringBuffer verificationErrors = new StringBuffer();
+	File pathToProfile = new File("d:/FireFox/");
+	FirefoxProfile profile = new FirefoxProfile(pathToProfile);
+	WebDriver driver;
+	
+		public void create() {
+		driver = new FirefoxDriver(firefoxBinary, profile);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get(base_url);
+		driver.get(baseURL);
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginAs("root", "root");
-		CreateDBPage dbPage = new CreateDBPage(driver);
-		dbPage.createTable();
-		CreateTablePage tablePage = new CreateTablePage(driver);
+		AddDB dbPage = new AddDB(driver);
+		dbPage.createDB();
+		AddColumns tablePage = new AddColumns(driver);
 		tablePage.addTable();
 		tablePage.addColumns("2");
 		tablePage.waitForAddColumns();
@@ -39,11 +38,12 @@ public class Runnert {
 		tablePage.submitCreatingTable();
 		tablePage.waitForAddColumns();
 		DataInsertion dataInsertion = new DataInsertion(driver);
-		
 		dataInsertion.openInsertMenu();
 		dataInsertion.fillData();
 		dataInsertion.pushButton();
 		dataInsertion.moveToBrowse();
+		driver.close();
+		
 	}
 
 }
