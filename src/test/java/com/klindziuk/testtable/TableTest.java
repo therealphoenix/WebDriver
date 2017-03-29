@@ -20,10 +20,9 @@ public class TableTest {
 	String baseURL = "http://localhost/phpmyadmin/";
 	File pathBinary = new File("C:\\program files\\Mozilla Firefox\\firefox.exe");
 	FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-	StringBuffer verificationErrors = new StringBuffer();
 	File pathToProfile = new File("d:/FireFox/");
 	FirefoxProfile profile = new FirefoxProfile(pathToProfile);
-	WebDriver driver;
+	WebDriver driver = null;
 	LoginPage loginPage;
 	TablePage tablePage;
 	
@@ -37,8 +36,7 @@ public class TableTest {
 		DropDB drop = new DropDB();
 		drop.removeDB();
 		drop.logOut();
-		
-	}
+			}
 
 	@BeforeClass
 	public void beforeTest() throws Exception {
@@ -59,11 +57,6 @@ public class TableTest {
 	public void afterTest() {
 		tablePage.logOut();
 		driver.close();
-		
-		String verificationErrorString = verificationErrors.toString();
-		if (!"".equals(verificationErrorString)) {
-			Assert.fail(verificationErrorString);
-		}
 	}
 
 	@Test

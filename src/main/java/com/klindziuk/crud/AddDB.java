@@ -9,8 +9,7 @@ public class AddDB {
 	private By newDBLocator = By.linkText("New");
 	private By dbNameLocator = By.id("text_create_db");
 	private By buttonGoLocator = By.id("buttonGo");
-	public By dataBaseLocator = By.linkText("auth");
-
+	
 	public AddDB(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -20,8 +19,7 @@ public class AddDB {
 		driver.findElement(dbNameLocator).clear();
 		driver.findElement(dbNameLocator).sendKeys("auth");
 		// sometimes it doensn't work
-		// driver.findElement(By.xpath("//select[@name =
-		// 'db_collation']//*[text() = 'utf8_general_ci']")).click();
+		// driver.findElement(By.xpath("//select[@name = 'db_collation']//*[text() = 'utf8_general_ci']")).click();
 		driver.findElement(buttonGoLocator).click();
 	}
 

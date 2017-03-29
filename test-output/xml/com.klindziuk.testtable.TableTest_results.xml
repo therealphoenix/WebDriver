@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2,271">
+           time="1,741">
   <properties />
   
   
-            <testcase name="testTable" time="2,271" classname="com.klindziuk.testtable.TableTest" />
+            <testcase name="testTable" time="1,741" classname="com.klindziuk.testtable.TableTest" />
       
 </testsuite>

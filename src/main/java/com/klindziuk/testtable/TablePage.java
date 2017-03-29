@@ -52,8 +52,7 @@ public By autoIncrementSelector = By.cssSelector("#tablerowstats > tbody:nth-chi
 			throw new IllegalStateException("Invalid page opened");
 		}
 		}
-	
-	
+		
 	// open database
 	public void selectDatabase() {
 		driver.findElement(dataBaseLocator).click();

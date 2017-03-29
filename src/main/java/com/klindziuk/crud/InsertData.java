@@ -2,6 +2,8 @@ package com.klindziuk.crud;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InsertData {
 	private WebDriver driver;
@@ -28,6 +30,10 @@ public class InsertData {
 
 	public void openInsertMenu() {
 		driver.findElement(insertMenuLocator).click();
+	}
+	public void waitFor() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(buttonYesLocator));
 	}
 
 	public void fillData() {

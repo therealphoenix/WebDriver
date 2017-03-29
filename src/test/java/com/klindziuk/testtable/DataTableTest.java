@@ -16,10 +16,9 @@ public class DataTableTest {
 	String baseURL = "http://localhost/phpmyadmin/";
 	File pathBinary = new File("C:\\program files\\Mozilla Firefox\\firefox.exe");
 	FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-	StringBuffer verificationErrors = new StringBuffer();
 	File pathToProfile = new File("d:/FireFox/");
 	FirefoxProfile profile = new FirefoxProfile(pathToProfile);
-	// WHY WE SHOULD INITIALIZE IT HERE, if NOT INITIALIZE - aftersuit crashed (
+	// WHY WE SHOULD INITIALIZE IT HERE, if NOT INITIALIZE - aftersuit will crash (
 	WebDriver driver = null;
 	LoginPage loginPage;
 	TablePage tablePage;
@@ -40,19 +39,12 @@ public class DataTableTest {
 	@AfterClass
 	public void afterTest() {
 		tablePage.logOut();
-		driver.close();
-		String verificationErrorString = verificationErrors.toString();
-		if (!"".equals(verificationErrorString)) {
-			Assert.fail(verificationErrorString);
-		}
 	}
 
 	@Test
 	public void testData_User1() {
-		// check for right page is opened(sometimes it PRESENT sometimes NOT.
-		// WTF ???)
-		// Assert.assertTrue("localhost / localhost / auth / users | phpMyAdmin
-		// 4.5.1".equals(driver.getTitle()));
+		// check for right page is opened(sometimes it PRESENT sometimes NOT. WTF ???)
+		// Assert.assertTrue("localhost / localhost / auth / users | phpMyAdmin 4.5.1".equals(driver.getTitle()));
 		// check u_id
 		Assert.assertTrue(tablePage.checkElement(tablePage.user1IdSelector, "1"));
 		// check u_login

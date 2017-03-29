@@ -1,7 +1,10 @@
 package com.klindziuk.crud;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddColumns {
 	private WebDriver driver;
@@ -32,6 +35,8 @@ public class AddColumns {
 	private By autoIncrementLocator = By.xpath("//input[@name='field_extra[0]']");
 	private By collationLocator = By.xpath("//select[@name = 'tbl_collation']//*[text() = 'utf8_general_ci']");
 	private By submitCreationLocator = By.xpath("//input[@name='do_save_data']");
+	private By iconStructureLocator = By.cssSelector(".ic_normalize");
+	private By exceptionLocator = By.cssSelector("div.print_ignore:nth-child(4) > label:nth-child(3)");
 
 	public AddColumns(WebDriver driver) {
 		this.driver = driver;
@@ -48,16 +53,22 @@ public class AddColumns {
 		driver.findElement(additionalFieldsLocator).sendKeys(columns);
 		driver.findElement(buttonSubmitAdditionalFieldsLocator).click();
 	}
-
-	public void waitForAddColumns() {
+	
+	public void waitForAdditionalComumns() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(lengthRememberLocator));
+	}
+	public void waitForStructure() {
 		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		WebDriverWait wait = new WebDriverWait(driver, 2);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(iconStructureLocator));
+		}
+		catch(TimeoutException toex){
+			WebDriverWait wait1 = new WebDriverWait(driver, 1);
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(exceptionLocator));	
 		}
 	}
-
-	public void addNamesOfColumn() {
+		public void addNamesOfColumn() {
 		driver.findElement(firstColumnLocator).sendKeys("u_id");
 		driver.findElement(secondColumnLocator).sendKeys("u_login");
 		driver.findElement(thirdColumnLocator).sendKeys("u_password");
